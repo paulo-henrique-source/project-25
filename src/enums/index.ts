@@ -11,3 +11,8 @@ export enum MenuTab {
   // REFERENCES = "REFERENCES",
   FATCA = "FATCA",
 }
+
+export enum PersonType {
+  PF = "pf",
+  PJ = "pj",
+}

@@ -58,7 +58,7 @@ PROXIMA CALL 26/03
 
 - Criar um trello
 
-- Separar no inico do fluxo se a pessoa é PF ou PJ -- doing
+- Separar no inico do fluxo se a pessoa é PF ou PJ -- done
 
 - Mascara em alguns campos -- doing
 

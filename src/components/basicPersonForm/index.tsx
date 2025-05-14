@@ -5,14 +5,17 @@ import * as Styled from "./styles";
 
 import { Form, GroupsProps } from "../form";
 import { useFormContext } from "react-hook-form";
-import { MenuTab } from "@application/enums";
+import { MenuTab, PersonType } from "@application/enums";
 import Image from "next/image";
+import { useSearchParams } from "next/navigation";
 
 type BasicPersonFormProps = {
   id: MenuTab;
 };
 
 export function BasicPersonForm({ id }: BasicPersonFormProps) {
+  const searchParams = useSearchParams();
+  const type = searchParams.get("type");
   const form = useFormContext();
 
   const handleSubmit = () => {
@@ -34,7 +37,7 @@ export function BasicPersonForm({ id }: BasicPersonFormProps) {
         },
         {
           id: "taxIdentifier",
-          label: "CPF/CNPJ",
+          label: type === PersonType.PF ? "CPF" : "CNPJ",
           type: "string",
         },
       ],
@@ -44,7 +47,7 @@ export function BasicPersonForm({ id }: BasicPersonFormProps) {
       inputs: [
         {
           id: "rgIe",
-          label: "RG/IE",
+          label: type === PersonType.PF ? "RG" : "IE",
           type: "string",
         },
         {
